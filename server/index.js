@@ -2,33 +2,13 @@
 import cors from "cors";
 import express from "express";
 import router from "./router.js";
-import mysql from 'mysql'
+import * as dotenv from "dotenv";
 
+dotenv.config()
 
 const app = express();
 
-let port = 4001
-
-
-export const db = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: '',
-    database: "restaurantSQL"
-
-})
-
-db.connect((error) => {
-
-    if (error) {
-        console.log(error, ">>>>>run=>    sudo /opt/lampp/lampp start ** if start this project first time or restart copmuter<<<<") 
-
-        throw error ;
-        
-    }
-    console.log("MySql Connected");
-
-});
+let port = process.env.PORT
  
 app.use(cors());
 
