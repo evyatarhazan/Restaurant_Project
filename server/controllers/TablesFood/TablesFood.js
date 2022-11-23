@@ -1,5 +1,5 @@
 
-import { db } from "../dbConnect.js";
+import { db } from "../../dbConnect.js";
 
 
 
