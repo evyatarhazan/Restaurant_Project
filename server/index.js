@@ -1,7 +1,6 @@
 
 import cors from "cors";
 import express from "express";
-import router from "./router.js";
 import * as dotenv from "dotenv";
 import { DinersRouter } from "./controllers/Diners/DinersRouter.js";
 import { MenuRouter } from "./controllers/Menu/MenuRouter.js";
@@ -17,11 +16,13 @@ let port = process.env.PORT
 app.use(cors());
 
 app.use(express.json());
-app.use(router);
-app.use(DinersRouter);
-app.use(MenuRouter);
-app.use(reservationRouter);
-app.use(TablesFoodRouter);
+
+app.use('/api/v1', DinersRouter);
+app.use('/api/v1', MenuRouter);
+app.use('/api/v1', reservationRouter);
+app.use('/api/v1', TablesFoodRouter);
+
+
 app.use(express.urlencoded({ extended: false }));
 
 app.listen(port, () => {
