@@ -1,7 +1,7 @@
 import Response from "../defultComponent/response.tsx";
 import axios from "axios";
 
-var http = "http://127.0.0.1:4001"
+var http = "http://127.0.0.1:4001/api/v1"
 
 export default class BaseService {
     private static baseURL: string = `${process.env.REACT_APP_BASE_URL}:${process.env.REACT_APP_SERVER_PORT}`;
