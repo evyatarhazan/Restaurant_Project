@@ -2,10 +2,10 @@
 import cors from "cors";
 import express from "express";
 import * as dotenv from "dotenv";
-import { DinersRouter } from "./controllers/Diners/DinersRouter.js";
-import { MenuRouter } from "./controllers/Menu/MenuRouter.js";
-import { reservationRouter } from "./controllers/reservation/reservationRouter.js";
-import { TablesFoodRouter } from "./controllers/TablesFood/TablesFoodRouter.js";
+import { DinersRouter } from "./controllers/Diners/Router.js";
+import { MenuRouter } from "./controllers/Menu/Router.js";
+// import { reservationRouter } from "./controllers/reservation/Router.js";
+import { TablesFoodRouter } from "./controllers/TablesFood/Router.js";
 
 dotenv.config()
 
@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use('/api/v1', DinersRouter);
 app.use('/api/v1', MenuRouter);
-app.use('/api/v1', reservationRouter);
+// app.use('/api/v1', reservationRouter);
 app.use('/api/v1', TablesFoodRouter);
 
 
